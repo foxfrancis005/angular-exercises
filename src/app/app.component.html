@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<form class="ui large form segment">
+	<h3 class="ui header">Add a link</h3>
+	<div class="field">
+		<label for="title">Title:</label>
+		<input type="text" name="title" #newtitle> <!-- La expresion #(hash) nos permite declarar una variable local. Esta variable local contiene la etiqueta en la que fue declarada. -->
+	</div>
+	<div class="field">
+		<label for="link">Link:</label>
+		<input type="text" name="link" #newlink>
+	</div>
+	<button class="ui positive right floated button" (click)="addArticle(newtitle,newlink)">Submit link</button><!-- Event binding: El atributo click encerrado en el parentesis le indica al angular que proceda a una acción especificada cuando el evento click ocurra en esta etiqueta. En este caso, las variables locales newtitle y newlink se mandan como parametros de una función declarada en el componente. (ver app.component.ts)-->
+</form>
